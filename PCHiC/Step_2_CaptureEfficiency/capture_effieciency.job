@@ -1,0 +1,13 @@
+#!/bin/bash
+#SBATCH --job-name=capture_effieciency
+#SBATCH --workdir=.
+#SBATCH --error=logs/capture_effieciency_%j.err
+#SBATCH --output=logs/capture_effieciency_%j.out
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --time=02:00:00
+#SBATCH --qos=debug
+module load samtools
+module load perl
+module load R/3.6.1
+/apps/GREASY/latest/INTEL/IMPI/bin/greasy /gpfs/projects/bsc08/bsc08471/p53/HiCUP/capture_efficiency.cmd

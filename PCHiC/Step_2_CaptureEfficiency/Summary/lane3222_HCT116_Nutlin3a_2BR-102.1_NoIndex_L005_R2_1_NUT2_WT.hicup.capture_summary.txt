@@ -1,0 +1,2 @@
+File	Ditags_Processed	Both_Captured	Forward_Captured	Reverse_Captured	Uncaptured	Captured_Cis	Captured_Trans	Percent_Both_Captured	Percent_Forward_Captured	Percent_Reverse_Captured	Percent_Uncaptured	Captured_Cis	Captured_Trans	Total_Captured	Percent_Total_Captured
+/gpfs/projects/bsc08/bsc08471/p53/HiCUP/newRun/NUT2WT/lane3222_HCT116_Nutlin3a_2BR-102.1_NoIndex_L005_R2_1.hicup.bam	116773849	2997871	40813481	41780054	31182443	77933458	7657948	2.57	34.95	35.78	26.7	77933458	7657948	85591406	73.3

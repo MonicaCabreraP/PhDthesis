@@ -1,0 +1,13 @@
+#!/bin/bash
+#SBATCH --job-name=bam2chicago
+#SBATCH --workdir=/gpfs/projects/bsc08/bsc08471/p53/Step2_CHiCAGO/downsampled/logs
+#SBATCH --error=/gpfs/projects/bsc08/bsc08471/p53/Step2_CHiCAGO/downsampled/logs/bam2chicago_%j.err
+#SBATCH --output=/gpfs/projects/bsc08/bsc08471/p53/Step2_CHiCAGO/downsampled/logs/bam2chicago_%j.out
+#SBATCH --ntasks=8
+#SBATCH --cpus-per-task=16
+#SBATCH --time=02:00:00
+#SBATCH --qos=debug
+#SBATCH --mail-type=end
+#SBATCH --mail-user=monica.cabrera@bsc.es
+module load bedtools
+/apps/GREASY/latest/INTEL/IMPI/bin/greasy /gpfs/projects/bsc08/bsc08471/p53/Step2_CHiCAGO/downsampled/bam2chicago.cmd

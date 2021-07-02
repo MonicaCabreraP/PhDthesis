@@ -1,0 +1,14 @@
+Outdir: /gpfs/projects/bsc08/bsc08471/PCHiC/p53/HiCUP/NUT1KO
+Threads: 10
+Quiet:0
+Keep:0
+Zip:1
+Bowtie: /apps/BOWTIE/1.2.2/GCC/bowtie
+R: /apps/R/3.5.1/INTEL/bin/R
+Index: /gpfs/projects/bsc08/shared_projects/IJC_3Dchromatin/genomes/human/GRCh37/current/indices/ebwt/Homo_sapiens_GRCh37_92_index
+Digest: /gpfs/projects/bsc08/shared_projects/IJC_3Dchromatin/genomes/human/GRCh37/current/digest_genome/Digest_Human_GRCh37_92_HindIII_None_10-51-28_27-03-2020.txt.gz
+Format: 
+Longest: 800
+Shortest: 150
+/gpfs/scratch/bsc08/bsc08471/data/Original_Sierra_Babraham/NUT1KO/lane3221_HCT116-_-_Nutlin3a_1BR-101.1_NoIndex_L004_R2.fastq.gz
+/gpfs/scratch/bsc08/bsc08471/data/Original_Sierra_Babraham/NUT1KO/lane3221_HCT116-_-_Nutlin3a_1BR-101.1_NoIndex_L004_R1.fastq.gz
