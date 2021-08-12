@@ -1,2 +1,0 @@
-File	Ditags_Processed	Both_Captured	Forward_Captured	Reverse_Captured	Uncaptured	Captured_Cis	Captured_Trans	Percent_Both_Captured	Percent_Forward_Captured	Percent_Reverse_Captured	Percent_Uncaptured	Captured_Cis	Captured_Trans	Total_Captured	Percent_Total_Captured
-/gpfs/projects/bsc08/bsc08471/p53/HiCUP/newRun/MOCK2KO/lane3_NoIndex_L003_R2_1.hicup.bam	103520686	3240943	41719477	42064778	16495488	79722639	7302559	3.13	40.3	40.63	15.93	79722639	7302559	87025198	84.07
