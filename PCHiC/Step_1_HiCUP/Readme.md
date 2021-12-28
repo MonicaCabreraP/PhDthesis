@@ -1,3 +1,7 @@
+```
+sh (poner link)HiCUP.sh
+```
+
 - *HiCUP github*: https://github.com/StevenWingett/HiCUP
 - *HiCUP homepage*: http://www.bioinformatics.babraham.ac.uk/projects/hicup 
 - *HiCUP documentation*: https://www.bioinformatics.babraham.ac.uk/projects/hicup/read_the_docs/html/index.html 
