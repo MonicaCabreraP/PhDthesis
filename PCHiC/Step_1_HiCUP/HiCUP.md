@@ -1,6 +1,6 @@
 - *HiCUP github*: https://github.com/StevenWingett/HiCUP
 - *HiCUP homepage*: http://www.bioinformatics.babraham.ac.uk/projects/hicup 
-- *HiCUP Documentation*: https://www.bioinformatics.babraham.ac.uk/projects/hicup/read_the_docs/html/index.html 
+- *HiCUP documentation*: https://www.bioinformatics.babraham.ac.uk/projects/hicup/read_the_docs/html/index.html 
 - *Primary contact*: steven.wingett@babraham.ac.uk
 
 Hi-C User Pipeline (HiCUP) is a bioinformatics pipeline for processing Hi-C data; it takes paired-end FASTQ files along with a FASTA reference genome and associated aligner indices and then reports valid di-tags* in BAM/SAM format.
