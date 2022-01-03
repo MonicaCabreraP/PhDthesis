@@ -5,7 +5,7 @@
 #Script Name	: HiCUP.sh                                                                                          
 #Description	: Mapping and processing Hi-C data and send the job to Mare Nostrum 4 (were HiCUP is installed)
 #Requirements   : Perl, Bowtie2, R (tested with version 3.6.0), SAM tools (version 0.1.18 or later)
-#Output         : A results folder will be created containing the bam files of the samples analyzed in the folder where you have this script                                                            
+#Output         : A results folder with the the bam files (HiCUP output) of your samples will be created in the folder with this script                                                            
 #Author       	: Monica Cabrera Pasadas                                                
 #Email         	: monica.cabrera.pasadas@gmail.com     
 #Last update    : 20 October 2021                                   
@@ -102,7 +102,7 @@ job=${PWD}/results/HiCUP.job
 	echo "module load bowtie2"
 	echo "module load hicup"
 	echo "module load samtools"
-	!!!!!! R 3.6.1
+	echo "module load "!!!!!! R 3.6.1
 
 	echo "/apps/GREASY/latest/INTEL/IMPI/bin/greasy ${PWD}/results/$command"
 
