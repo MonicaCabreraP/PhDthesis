@@ -20,4 +20,4 @@ HiCUP is a bioinformatics pipeline for processing Hi-C data that takes paired-en
 
 ## Run HiCUP
 
-[sh HiCUP.sh](/p53_project/PCHiC/Step_1_HiCUP/HiCUP.sh)
+[sh HiCUP.sh](HiCUP.sh)
