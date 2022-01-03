@@ -1,5 +1,10 @@
+HiCUP (Hi-C User Pipeline)
+--------------------------
+
+HiCUP is a bioinformatics pipeline for processing Hi-C data. 
+
 ```
-sh (poner link)HiCUP.sh
+sh [HiCUP.sh](p53_project/PCHiC/Step_1_HiCUP/HiCUP.sh)
 ```
 
 - *HiCUP github*: https://github.com/StevenWingett/HiCUP
