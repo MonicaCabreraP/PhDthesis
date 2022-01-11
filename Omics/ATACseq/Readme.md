@@ -2,13 +2,16 @@
 --------------------
 
 **Preprocessing of the p53 ATAC-seq datasets**
-*The ATAC-seq data were processed (trimmed, aligned, filtered, and quality controlled) using the ATAC-seq pipeline from the Kundaje lab31,32 (Table 2). The model-based analysis of ChIP-seq (MACS2)33 version 2.1.2 was used to identify the peak regions with options -B, -q 0.01–nomodel, -f BAM, -g mm. The Irreproducible Discovery Rate (IDR) method34 was used to identify reproducible peaks between two technical replicates (Fig. 1b). Only peaks reproducible between the two technical replicates were retained for downstream analyses. Peaks for all tissues were then merged together into a standard peak list. The number of raw reads mapped to each standard peak were counted using the intersect function of BedTools35 version 2.26.0. The raw count matrix32 was normalized by Reads Per Million mapped reads (RPM). Pearson correlation coefficients between technical or biological replicates across tissues were calculated based on the Log10 RPM matrix.*
+*The ATAC-seq data were processed (trimmed, aligned, filtered, and quality controlled) using an in-house the ATAC-seq pipeline detailed in: [this repository](MonicaCabreraP/NGS_analysis/ATACseq_analysis). The model-based analysis of ChIP-seq (MACS2)33 version 2.1.2 was used to identify the peak regions with options -B, -q 0.01–nomodel, -f BAM, -g mm. The Irreproducible Discovery Rate (IDR) method34 was used to identify reproducible peaks between two technical replicates . Only peaks reproducible between the two technical replicates were retained for downstream analyses. Peaks for all conditions were then merged together into a standard peak list. The number of raw reads mapped to each standard peak were counted using the intersect function of BedTools35 version 2.26.0. The raw count matrix32 was normalized by Reads Per Million mapped reads (RPM). Pearson correlation coefficients between technical or biological replicates across tissues were calculated based on the Log10 RPM matrix.*
 
 ## Introduction
 This pipeline is designed for automated end-to-end quality control and processing of ATAC-seq data.  The pipeline can be run on compute clusters using parallelized computing with job submission engines as well as on stand alone machines modifying the cluster job part. The pipeline can be run end-to-end, starting from raw FASTQ files all the way to peak calling and signal track generation using a single command. One can also start the pipeline from intermediate stages (for example, using alignment files as input). The pipeline supports paired-end data as well as replicated or non-replicated datasets. 
 
-There are 4 important steps:
-- [Pre-analysis](#Pre-analysis)
+There are 4 important steps in the analysis:
+- [Pre-analysis](#Pre-analysis) 
+- [Core analysis](#Core analysis) peak calling
+- [Advanced analysis](#Advanced analysis) at the level of peaks, motifs, nucleosomes, and TF footprints
+- [Integration analysis](#Integration analysis) with multiomics data to reconstruct regulatory networks. 
 
 The results produced by the pipeline include: 
 1) formatted HTML reports that include quality control measures specifically designed for ATAC-seq data
@@ -17,13 +20,11 @@ The results produced by the pipeline include:
 4) fold-enrichment and pvalue signal tracks. 
 
 
-(1) pre-analysis (quality control (QC) and alignment)
-(2) core analysis (peak calling)
-(3) advanced analysis at the level of peaks, motifs, nucleosomes, and TF footprints
-(4) integration with multiomics data to reconstruct regulatory networks. 
+## Pre-analysis 
+## Core analysis 
+## Advanced analysis 
+## Integration analysis 
 
-
-## Pre-analysis
 
 ### Pre-alignment quality control
 ------------------------------------
