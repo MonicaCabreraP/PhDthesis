@@ -1,12 +1,19 @@
 # p53_project
 
 :open_file_folder: [Hi-C](#Hi-C)
+
 :open_file_folder: [PCHi-C](#PCHi-C)
+
 :open_file_folder: [ChIP-seq TF](#ChIP-seq-TF-binding)
+
 :open_file_folder: [ChIP-seq Histone marks](#Histone-marks)
+
 :open_file_folder: [RNA-seq](#RNA-seq)
+
 :open_file_folder: [ATAC-seq](#ATAC-seq)
+
 :open_file_folder: [GRO-seq](#GRO-seq)
+
 :open_file_folder: [CTCG](#CTCF)
 
 
