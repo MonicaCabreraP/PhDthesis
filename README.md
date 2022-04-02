@@ -3,7 +3,7 @@
 :open_file_folder: Data
 - [Hi-C](#Hi-C)
 - [PCHi-C](#PCHi-C)
-- [ChIP-seq TF](#ChIP-seq TF)
+- [ChIP-seq TF](#ChIP-seq-TF-binding)
 - [ChIP-seq Histone marks](#Histone-marks)
 - [RNA-seq](#RNA-seq)
 - [ATAC-seq](#ATAC-seq)
