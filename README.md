@@ -1,55 +1,25 @@
-# p53_project
+# Data of the thesis
 
-:open_file_folder: [Hi-C](#Hi-C)
+## 3D structure
 
-:open_file_folder: [PCHi-C](#PCHi-C)
+:open_file_folder: [Hi-C](MonicaCabreraP/HiC_Explained)
 
-:open_file_folder: [ChIP-seq TF](#ChIP-seq-TF-binding)
+:open_file_folder: [PCHi-C](MonicaCabreraP/PCHiC_Explained)
 
-:open_file_folder: [ChIP-seq Histone marks](#Histone-marks)
+:open_file_folder: [CTCF](#CTCF)
 
-:open_file_folder: [RNA-seq](#RNA-seq)
+## Epigenetcs
 
-:open_file_folder: [ATAC-seq](#ATAC-seq)
+:open_file_folder: [ChIP-seq TF](#p53 ChIPseq)
+
+:open_file_folder: [ChIP-seq Histone marks](MonicaCabreraP/ChIPseq_Explained)
+
+:open_file_folder: [ATAC-seq](MonicaCabreraP/ATACseq_Explained)
+
+## Transcriptome
+
+:open_file_folder: [RNA-seq](MonicaCabreraP/RNAseq_Explained)
 
 :open_file_folder: [GRO-seq](#GRO-seq)
-
-:open_file_folder: [CTCG](#CTCF)
-
-
-# 3D structure
-└── [Hi-C] ( MonicaCabreraP/HiC_Explained)
-
-## PCHi-C
-├── [Experimental part] (/p53_project/HiC/Experimental/)
-└── [Computational part] ()
-
-## CTCF
-├── [Experimental part] (/p53_project/HiC/Experimental/)
-
-
-# Epigenome 
-## ChIP-seq TF binding
-├── [Experimental part] (/p53_project/HiC/Experimental/)
-└── [Computational part] ()
-
-## ChIP-seq Histone-marks
-Histone markers of enhancers: H3K4me1 and H3K27ac
-├── [Experimental part] (/p53_project/HiC/Experimental/)
-└── [Computational part] ()
-
-## ATAC-seq
-├── [Experimental part] (/p53_project/HiC/Experimental/)
-└── [Computational part] ()
-
-# Transcriptome 
-
-## RNA-seq
-├── [Experimental part] (/p53_project/HiC/Experimental/)
-└── [Computational part] ()
-
-## GRO-seq
-├── [Experimental part] (/p53_project/HiC/Experimental/)
-└── [Computational part] ()
 
 
