@@ -10,7 +10,7 @@
 
 ## Epigenetcs
 
-:open_file_folder: [ChIP-seq TF](#p53 ChIPseq)
+:open_file_folder: [ChIP-seq TF](#p53-ChIPseq)
 
 :open_file_folder: [ChIP-seq Histone marks](MonicaCabreraP/ChIPseq_Explained)
 
@@ -23,3 +23,8 @@
 :open_file_folder: [GRO-seq](#GRO-seq)
 
 
+# CTCF
+
+# p53-ChIPseq
+
+# GRO-seq
