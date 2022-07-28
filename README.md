@@ -2,7 +2,7 @@
 
 ## 3D structure
 
-:open_file_folder: [Hi-C](MonicaCabreraP/HiC_Explained)
+:open_file_folder: [Hi-C](MonicaCabreraP/Bojos_supercomputacio)
 
 :open_file_folder: [PCHi-C](Cabrera_2022_PhDthesis_code/PHiC)
 
