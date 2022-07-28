@@ -1,4 +1,4 @@
-# Data of the thesis
+# Structure of the thesis
 
 ## 3D structure
 
