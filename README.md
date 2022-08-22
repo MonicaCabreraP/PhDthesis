@@ -4,7 +4,7 @@
 
 :open_file_folder: [Hi-C](HiC)
 
-:open_file_folder: [PCHi-C](Cabrera_2022_PhDthesis_code/PHiC)
+:open_file_folder: [PCHi-C](PCHiC)
 
 :open_file_folder: [CTCF](#CTCF)
 
