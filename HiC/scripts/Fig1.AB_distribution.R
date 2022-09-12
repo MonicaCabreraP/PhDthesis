@@ -1,3 +1,17 @@
+## Script name: Compartment_figures.R = Fig1.AB_distribution.pdf               
+## Last modification: 09 September 2022  		 
+## Author: Monica Cabrera-Pasadas
+## Email: monica.cabrera.pasadas@gmail.com
+
+# Packages ----
+packages <- c("ggplot2", "reshape", "hrbrthemes", "GenomicRanges", "dplyr","ComplexHeatmap","remotes", "gplots", "tidyverse","circlize", "viridis","dplyr", "ggforce","gplots", "ggpubr","RColorBrewer","data.table", "ggrepel","cluster","factoextra")
+invisible(lapply(packages, library, character.only = TRUE))
+
+# wd <- "/home/monica/Desktop/MN/"
+wd <- "/home/monica/Desktop/MN/"
+setwd(paste0(wd,"projects/p53/HiC/Figures"))
+load(paste0(wd,"/projects/DATA/HCT116/HiC/HiC.RData"))
+
 # Fig 1.AB_distribution.pdf ----
 
 pdf(file="Fig1.Stacked_AB_general_distribuion.pdf",width = 12, height = 8)
