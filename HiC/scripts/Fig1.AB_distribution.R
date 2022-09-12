@@ -7,7 +7,6 @@
 packages <- c("ggplot2", "reshape", "hrbrthemes", "GenomicRanges", "dplyr","ComplexHeatmap","remotes", "gplots", "tidyverse","circlize", "viridis","dplyr", "ggforce","gplots", "ggpubr","RColorBrewer","data.table", "ggrepel","cluster","factoextra")
 invisible(lapply(packages, library, character.only = TRUE))
 
-# wd <- "/home/monica/Desktop/MN/"
 wd <- "/home/monica/Desktop/MN/"
 setwd(paste0(wd,"projects/p53/HiC/Figures"))
 load(paste0(wd,"/projects/DATA/HCT116/HiC/HiC.RData"))
