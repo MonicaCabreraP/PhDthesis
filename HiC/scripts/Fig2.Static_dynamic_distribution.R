@@ -1,3 +1,16 @@
+## Script name: Compartment_figures.R = Fig2.Static_dynamic_distribution.pdf              
+## Last modification: 09 September 2022  		 
+## Author: Monica Cabrera-Pasadas
+## Email: monica.cabrera.pasadas@gmail.com
+
+# Packages ----
+packages <- c("ggplot2", "reshape", "hrbrthemes", "GenomicRanges", "dplyr","ComplexHeatmap","remotes", "gplots", "tidyverse","circlize", "viridis","dplyr", "ggforce","gplots", "ggpubr","RColorBrewer","data.table", "ggrepel","cluster","factoextra")
+invisible(lapply(packages, library, character.only = TRUE))
+
+wd <- "/home/monica/Desktop/MN/"
+setwd(paste0(wd,"projects/p53/HiC/Figures"))
+load(paste0(wd,"/projects/DATA/HCT116/HiC/HiC.RData"))
+
 # Fig 2.Static_dynamic_distribution.pdf ----
 
 pdf(file="Fig2.Stacked_static_dynamic_distribuion.pdf",width = 12, height = 8)
