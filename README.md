@@ -16,7 +16,7 @@
 
 :open_file_folder: [ATAC-seq](MonicaCabreraP/ATACseq_Explained)
 
-# CTCF
+## CTCF
 
 
 ## Transcriptome
@@ -25,6 +25,8 @@
 
 :open_file_folder: [GRO-seq](#GRO-seq)
 
-# GRO-seq
+## GRO-seq
 
 # Softwares used in this thesis
+
+:open_file_folder: [HiCUP](Softwares/HiCUP)
