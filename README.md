@@ -1,4 +1,4 @@
-# Structure of the thesis
+# Analysis performed in this thesis
 
 ## 3D structure
 
@@ -26,3 +26,5 @@
 :open_file_folder: [GRO-seq](#GRO-seq)
 
 # GRO-seq
+
+# Softwares used in this thesis
