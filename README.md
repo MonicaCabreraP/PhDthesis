@@ -6,7 +6,6 @@
 
 :open_file_folder: [PCHi-C](PCHiC)
 
-:open_file_folder: [CTCF](#CTCF)
 
 ## Epigenetics
 
@@ -18,6 +17,7 @@
 
 ## CTCF
 
+:open_file_folder: [CTCF](#CTCF)
 
 ## Transcriptome
 
