@@ -1,4 +1,4 @@
-# Analysis performed in this thesis
+# Experiments performed in this thesis
 
 ## 3D structure
 
@@ -27,6 +27,4 @@
 
 ## GRO-seq
 
-# Softwares used in this thesis
-
-:open_file_folder: [HiCUP](Softwares/HiCUP)
+# Integration
