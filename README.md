@@ -28,3 +28,13 @@
 ## GRO-seq
 
 # Integration
+
+:open_file_folder: [Hi-C-p53 ChIPseq](Hi-C-p53 ChIPseq)
+
+:open_file_folder: [Hi-C-RNAseq](Hi-C-RNAseq)
+
+:open_file_folder: [Hi-C-ChIP-seq Histone marks](Hi-C-ChIP-seq Histone marks)
+
+:open_file_folder: [Hi-C-RNAseq-p53 ChIPseq](Hi-C-RNAseq)
+
+:open_file_folder: [Hi-C-RNAseq-p53 ChIPseq-ChIP-seq Histone marks](Hi-C-RNAseq)
