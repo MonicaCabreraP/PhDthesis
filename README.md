@@ -29,7 +29,7 @@
 
 # Integration
 
-:open_file_folder: [Hi-C-p53 ChIPseq]
+:open_file_folder: [Hi-C-p53 ChIPseq](Integration_analysis/HiC-p53ChIPseq)
 
 :open_file_folder: [Hi-C-RNAseq]
 
