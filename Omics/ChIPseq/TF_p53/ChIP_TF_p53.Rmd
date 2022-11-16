@@ -1,0 +1,71 @@
+---
+title: "ChIP_TF_p53"
+output: html_document
+date: '2022-11-16'
+---
+Script name: ChIP_TF_p53.Rmd               
+Purpose: Load the p53 ChIPseq  data, clean it and extract descriptive information         
+Email: monica.cabrera.pasadas@gmail.com
+
+``` {r include=FALSE}
+wd <- "/home/monica/Desktop/MN/projects/DATA/old/HCT116/ChIPseq_TF/p53/" #set the working directory where the data is located
+packages <- c("GenomicRanges","ChIPseeker","TxDb.Hsapiens.UCSC.hg19.knownGene","clusterProfiler","ggplot2")
+invisible(lapply(packages, library, character.only = TRUE))
+txdb <- TxDb.Hsapiens.UCSC.hg19.knownGene
+```
+
+```{r}
+p53_dmso <- read.table(paste0(wd,"DMSO/WT/HCT116_ChIP_TF_DMSO_WT.peaks.txt"))
+p53_dmso <- p53_dmso[,c("V2","V3","V4")]
+colnames(p53_dmso) <- c("Chromosome", "Start", "End")
+p53_dmso.gr <- makeGRangesFromDataFrame(p53_dmso,seqnames.field = "Chromosome", start.field = "Start",end.field = "End", keep.extra.columns = T)
+
+p53_nutlin <- read.table(paste0(wd,"Nutlin3a/WT/HCT116_ChIP_TF_Nutlin3a_WT.peaks.txt"))
+p53_nutlin <- p53_nutlin[,c("V2","V3","V4")]
+colnames(p53_nutlin) <- c("Chromosome", "Start", "End")
+p53_nutlin.gr <- makeGRangesFromDataFrame(p53_nutlin,seqnames.field = "Chromosome", start.field = "Start",end.field = "End", keep.extra.columns = T)
+```
+
+# 1) How many p53 bindings are in DMSO and after Nutlin3a treatment?
+```{r}
+print(paste0("There are ", nrow(p53_dmso), " p53 bindings in the control sample")) 
+```
+
+```{r}
+print(paste0("There are ", nrow(p53_nutlin), " p53 bindings after treatment")) 
+```
+
+# 2) Are the control binding sites in the treatment sample ?
+```{r}
+subsetByOverlaps(p53_dmso.gr,p53_nutlin.gr)
+```
+
+```{r}
+# ChIP peaks coverage plot ----
+files <- list(nutlin = p53_nutlin.gr,dmso = p53_dmso.gr)
+covplot(files)
+```
+
+```{r}
+col <- c(dmso='#F8766D', nutlin='#00BFC4')
+covplot(files) + facet_grid(chr ~ .id) + scale_color_manual(values=col) + scale_fill_manual(values=col)
+```
+```{r}
+# Heatmap of ChIP binding to TSS regions -----
+peakHeatmap(files, TxDb=txdb, upstream=1000, downstream=1000, color="red")
+```
+
+```{r}
+# Prepare the promotor regions
+promoter <- getPromoters(TxDb=txdb, upstream=1000, downstream=1000)
+
+# Calculate the tag matrix
+tagMatrixList <- lapply(files, getTagMatrix, windows=promoter)
+
+### Average Profile of ChIP peaks binding to TSS region
+plotAvgProf(tagMatrixList, xlim=c(-1000, 1000), conf=0.95,resample=500, facet="row")
+```
+
+```{r}
+
+```
