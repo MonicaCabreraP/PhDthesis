@@ -9,7 +9,7 @@
 
 ## Epigenetics
 
-:open_file_folder: [ChIP-seq TF]
+:open_file_folder: [ChIP-seq TF](Omics(ChIP_TF)
 
 :open_file_folder: [ChIP-seq Histone marks]
 
