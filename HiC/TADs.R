@@ -45,6 +45,7 @@ summary(TADs_TADbitScore)
 # Max.   :10.000  Max.   :10.000   Max.   :10.000   Max.   :10.000   Max.   :10.000 Max.   :10.00  
 # NA's   :622     NA's   :1422     NA's   :1535     NA's   :1588     NA's   :1201   NA's   :1812    
 
+# As it is observed, there are missing values (NA's), the way I chose to handle them is replacing them by 0.
 TADs_TADbitScore_NA20 <- na_replace(TADs_TADbitScore,0) 
 head(TADs_TADbitScore_NA20,2) #Visualizing all what I did to the dataset happened
 
