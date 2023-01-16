@@ -2,7 +2,7 @@
 
 ## 3D structure
 
-:open_file_folder: [Hi-C](HiC)
+:open_file_folder: [Hi-C](PhDthesis/code/HiC/)
 
 :open_file_folder: [PCHi-C](PCHiC)
 
