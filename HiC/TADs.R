@@ -64,3 +64,4 @@ TADs_TADbitScore_NA20$Category_tads <- do.call(paste, c(TADs_TADbitScore_NA20$in
 TADs_TADbitScore_NA20$state_tads <-as.character(ifelse(TADs_TADbitScore_NA20$Category_tads == paste(replicate(length(samples), "TAD"), collapse = "-") , 'Invariant', ifelse(a$Category_tads == paste(replicate(length(samples), "NoTAD"), collapse = "-") , 'NoTAD', 'Variable')))
 
 write.table(TADs_TADbitScore_NA20, file="clean_aligned_TADborders_TADbit",sep = "\t", quote = F)
+save.image(file='TADs.RData')
