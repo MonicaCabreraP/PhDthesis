@@ -1,27 +1,26 @@
-## Script information ---------------------------
+## Script information ----
 ## Script name: TADs.R                 
-## Purpose: Clean the TADs and prepare them for visualization 
+## Purpose: Clean the TADs file and prepare ir for visualization 
 ## Last modification: 16 Jan 2023  		 
 ## Author: Monica Cabrera-Pasadas
 ## Email: monica.cabrera.pasadas@gmail.com
 
-# Notes
-# If we remove the missing values (NA), we end up with:
-## 2.264 TADborders (2.091 Invariant and 171 Variables)
+# Notes ----
+# If we remove the missing values (NA), we end up with: 2.264 TADborders (2.091 Invariant and 171 Variables)
 # 44 TAD-TAD-TAD-TAD-TAD-NoTAD, 27 TAD-NoTAD-TAD-TAD-TAD-TAD, 24 TAD-TAD-NoTAD-TAD-TAD-TAD, 19 NoTAD-TAD-TAD-TAD-TAD-TAD, 11 TAD-TAD-TAD-NoTAD-TAD-TAD, 9 TAD-NoTAD-NoTAD-TAD-TAD-TAD, 9 TAD-TAD-TAD-TAD-NoTAD-TAD, 5 TAD-TAD-NoTAD-NoTAD-TAD-TAD  --> The rest of combinations have less frequency than 5 times
 # Of the 27 TAD-NoTAD-TAD-TAD-TAD-TAD: 4 chr7 , 3 chr3, 3 chr5, 3 chrX, 2 chr12, 2 chr2, 2 chr20, 1 chr1, 1 chr10, 1 chr13, 1 chr15, 1 chr16, 1 chr17, 1 chr19, 1 chr8 
 
-## Settings ---------------------------
+## Settings ----
 wd <- "/home/mcabrera/"
 #wd <- "/home/monica/"
-setwd(paste0(wd,"Desktop/MN/projects/p53/data/HCT116/HiC/"))
+setwd(paste0(wd,"Desktop/MN/projects/p53/data/HCT116/HiC/")) #path where the file is located after processing the HiC data with TADbit 
 
 packages <- c("imputeTS")
 invisible(lapply(packages, library, character.only = TRUE))
 
 colors_samples=c("#FDE725FF", "#440154FF","#414487FF","#2A788EFF","#22A884FF","#7AD151FF")
 
-## Working with the dataset ---------------------------
+## Working with the dataset ----
 TADs_TADbitScore <- read_tsv("aligned_TADborders_TADbit",col_names = T) # Loading the TAD borders scores obtained from TADbit and manually aliged by François Serra
 
 head(TADs_TADbitScore) #Visualizing the data loaded
