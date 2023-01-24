@@ -58,7 +58,7 @@ summary(Compartments_NA20[,c(samples)]) #Visualizing that NA are removed
 ## Let's categorize the Compartments values in A and B according to their sign (A compartment has positive eigenvector values and B negative)
 for (i in samples) { Compartments_NA20[[paste0("Category_",i)]] <- as.character(ifelse(Compartments_NA20[i] < 0, 'B', ifelse(Compartments_NA20[i] > 0, 'A', 'NULL'))) }
 Compartments_NA20$combinations <- do.call(paste, c(Compartments_NA20[,grep("Category", names(Compartments_NA20), value = TRUE)], sep="-"))
-Compartments_NA20$state_Compartments_NA20 <- as.character(ifelse(Compartments_NA20$combinations == paste(replicate(length(samples), "A"), collapse = "-") , 'static in A', ifelse(Compartments_NA20$combinations == paste(replicate(length(samples), "B"), collapse = "-") , 'static in B', 'dynamic')))
+Compartments_NA20$state_Compartments <- as.character(ifelse(Compartments_NA20$combinations == paste(replicate(length(samples), "A"), collapse = "-") , 'static in A', ifelse(Compartments_NA20$combinations == paste(replicate(length(samples), "B"), collapse = "-") , 'static in B', 'dynamic')))
 
 head(Compartments_NA20,2)
 
