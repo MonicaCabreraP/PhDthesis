@@ -1,34 +1,40 @@
 # Script information ----
 ## Script name: HiC_TADs.R                 
 ## Purpose: Clean the TADs file obtained from TADbit and manual alignment and prepare it for visualization 
-## Last modification: 16 Jan 2023  		 
+## Last modification: 24 Jan 2023  		 
 ## Author: Monica Cabrera-Pasadas
 ## Email: monica.cabrera.pasadas@gmail.com
+# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #
 
 # Notes ----
-# If we remove the missing values (NA), we end up with: 2.264 TADborders (2.091 Invariant and 171 Variables)
+# Handleing NA values: If we remove the missing values (NA), we end up with: 2.264 TADborders (2.091 Invariant and 171 Variables)
 # 44 TAD-TAD-TAD-TAD-TAD-NoTAD, 27 TAD-NoTAD-TAD-TAD-TAD-TAD, 24 TAD-TAD-NoTAD-TAD-TAD-TAD, 19 NoTAD-TAD-TAD-TAD-TAD-TAD, 11 TAD-TAD-TAD-NoTAD-TAD-TAD, 9 TAD-NoTAD-NoTAD-TAD-TAD-TAD, 9 TAD-TAD-TAD-TAD-NoTAD-TAD, 5 TAD-TAD-NoTAD-NoTAD-TAD-TAD  --> The rest of combinations have less frequency than 5 times
 # Of the 27 TAD-NoTAD-TAD-TAD-TAD-TAD: 4 chr7 , 3 chr3, 3 chr5, 3 chrX, 2 chr12, 2 chr2, 2 chr20, 1 chr1, 1 chr10, 1 chr13, 1 chr15, 1 chr16, 1 chr17, 1 chr19, 1 chr8 
+# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #
 
 # Settings ----
 wd <- "/home/mcabrera/"
 #wd <- "/home/monica/"
 setwd(paste0(wd,"Desktop/MN/projects/p53/data/HCT116/HiC/")) #path where the file is located after processing the HiC data with TADbit 
+samples <- c("DMSO","p53_1h","p53_4h","p53_7h","p53_10h", "p53_24h")
 
 packages <- c("imputeTS")
 invisible(lapply(packages, library, character.only = TRUE))
 
-colors_samples=c("#FDE725FF", "#440154FF","#414487FF","#2A788EFF","#22A884FF","#7AD151FF")
+## Selecting 6 colors from the 'viridis' palette for representing the samples time-course
+colors_samples=c("#fde725ff", "#79d051ff","","#26a784ff","#2a768eff","#404284ff","440154ff") #Obtained with: scales::show_col(colormap(colormap = colormaps$viridis,nshades=6), labels = T)
+# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #
 
 # Loading and cleaning the dataset ----
-TADs_TADbitScore <- read_tsv("aligned_TADborders_TADbit",col_names = T) # Loading the TAD borders scores obtained from TADbit and manually aliged by François Serra
+TADs_TADbitScore <- read_tsv("aligned_TADborders_TADbit.tsv",col_names = T) # Loading the TAD borders scores obtained from TADbit and manually aliged by François Serra
 head(TADs_TADbitScore) #Visualizing that the data is properly loaded
 
-TADs_TADbitScore <- TADs_TADbitScore[,grep(pattern="score_|Chromosome|position", x=colnames(TADs_TADbitScore))] # Taking only the columns that contain the TADbit score from the samples of interest
-TADs_TADbitScore <- TADs_TADbitScore[order(TADs_TADbitScore$Chromosome),] # Sorting by chromosome as the data is disorganized
+TADs_TADbitScore <- TADs_TADbitScore %>% select(Chromosome,position,starts_with("score_")) # Taking only the columns that contain the TADbit score from the samples of interest
+
+chromosome_order<-c(paste("chr",1:22,sep=""),"chrX")
+TADs_TADbitScore$Chromosome<-factor(TADs_TADbitScore$Chromosome, levels=chromosome_order)
 # TADs_TADbitScore$Chromosome <- sapply(TADs_TADbitScore$Chromosome, gsub, pattern='chr', replacement='') # Remove the chr string (if needed) for following steps 
 
-samples <- c("DMSO","p53_1h","p53_4h","p53_7h","p53_10h", "p53_24h")
 colnames(TADs_TADbitScore) <- c("Chromosome","TADborder",samples) #Re-naming the columns
 
 head(TADs_TADbitScore) #Visualizing that what I did above to the dataset happened in the way I wanted
@@ -45,6 +51,7 @@ summary(TADs_TADbitScore)
 
 # As it is observed, there are missing values (NA's), the way I chose to handle them is replacing them by 0.
 TADs_TADbitScore_NA20 <- na_replace(TADs_TADbitScore,0) 
+TADs_TADbitScore_NA20 <- TADs_TADbitScore_NA20[rowSums(TADs_TADbitScore_NA20[,c(samples)])!=0,] # Remove all rows that have 0 (NA) at all time points (if they sum 0 they will be removed), otherwise, it means it has a compartment value in at least one point and it can be useful if we want to subset this table
 
 summary(TADs_TADbitScore_NA20) #Visualizing that NA are removed
 # DMSO             p53_1h           p53_4h        p53_7h          p53_10h         p53_24h      
@@ -54,12 +61,17 @@ summary(TADs_TADbitScore_NA20) #Visualizing that NA are removed
 # Mean   : 7.458  Mean   : 5.869  Mean   : 5.747  Mean   : 5.852  Mean   : 6.576  Mean   : 5.221  
 # 3rd Qu.:10.000  3rd Qu.:10.000  3rd Qu.:10.000  3rd Qu.:10.000  3rd Qu.:10.000  3rd Qu.:10.000   
 # Max.   :10.000  Max.   :10.000  Max.   :10.000  Max.   :10.000  Max.   :10.000  Max.   :10.000 
-  
+
 TADs_TADbitScore_NA20$individual_TADstate <- data.frame(apply(TADs_TADbitScore_NA20[,-c(1,2)], 2, function(x) { ifelse(x <= 4 , 'NoTAD', 'TAD') }))
 TADs_TADbitScore_NA20$Category_tads <- do.call(paste, c(TADs_TADbitScore_NA20$individual_TADstate, sep="-"))
 
 TADs_TADbitScore_NA20$state_tads <-as.character(ifelse(TADs_TADbitScore_NA20$Category_tads == paste(replicate(length(samples), "TAD"), collapse = "-") , 'Invariant', 
-                                                  ifelse(a$Category_tads == paste(replicate(length(samples), "NoTAD"), collapse = "-") , 'NoTAD', 'Variable')))
+                                                       ifelse(a$Category_tads == paste(replicate(length(samples), "NoTAD"), collapse = "-") , 'NoTAD', 'Variable')))
+
+## 1) How many TADs in total do we have for the analysis? ----
+nrow(TADs_TADbitScore_NA20) 
+# 4.777 TADs
 
 write.table(TADs_TADbitScore_NA20, file="clean_aligned_TADborders_TADbit",sep = "\t", quote = F)
 save.image(file='TADs.RData')
+# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #
