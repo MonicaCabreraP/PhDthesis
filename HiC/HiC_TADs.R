@@ -1,6 +1,6 @@
 # Script information ----
-## Script name: TADs.R                 
-## Purpose: Clean the TADs file and prepare ir for visualization 
+## Script name: HiC_TADs.R                 
+## Purpose: Clean the TADs file obtained from TADbit and manual alignment and prepare it for visualization 
 ## Last modification: 16 Jan 2023  		 
 ## Author: Monica Cabrera-Pasadas
 ## Email: monica.cabrera.pasadas@gmail.com
