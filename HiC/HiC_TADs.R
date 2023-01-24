@@ -30,12 +30,11 @@ TADs_TADbitScore <- read_tsv("aligned_TADborders_TADbit.tsv",col_names = T) # Lo
 head(TADs_TADbitScore) #Visualizing that the data is properly loaded
 
 TADs_TADbitScore <- TADs_TADbitScore %>% select(Chromosome,position,starts_with("score_")) # Taking only the columns that contain the TADbit score from the samples of interest
+colnames(TADs_TADbitScore) <- c("Chromosome","TADborder",samples) #Re-naming the columns
 
 chromosome_order<-c(paste("chr",1:22,sep=""),"chrX")
 TADs_TADbitScore$Chromosome<-factor(TADs_TADbitScore$Chromosome, levels=chromosome_order)
 # TADs_TADbitScore$Chromosome <- sapply(TADs_TADbitScore$Chromosome, gsub, pattern='chr', replacement='') # Remove the chr string (if needed) for following steps 
-
-colnames(TADs_TADbitScore) <- c("Chromosome","TADborder",samples) #Re-naming the columns
 
 head(TADs_TADbitScore) #Visualizing that what I did above to the dataset happened in the way I wanted
 
@@ -72,6 +71,7 @@ TADs_TADbitScore_NA20$state_tads <-as.character(ifelse(TADs_TADbitScore_NA20$Cat
 nrow(TADs_TADbitScore_NA20) 
 # 4.777 TADs
 
+TADs.gr <- makeGRangesFromDataFrame(TADs_TADbitScore_NA20, seqnames.field = "Chromosome", start.field = "TADborder", end.field = "TADborder", keep.extra.columns = T)
 write.table(TADs_TADbitScore_NA20, file="clean_aligned_TADborders_TADbit",sep = "\t", quote = F)
 save.image(file='TADs.RData')
 # --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #
