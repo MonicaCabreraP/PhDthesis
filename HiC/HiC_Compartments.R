@@ -1,7 +1,7 @@
 # Script information ----
 ## Script name: HiC_Compartments.R                 
 ## Purpose: Clean the compartments file obtained from TADbit and prepare it for visualization 
-## Last modification: 26 Jan 2023  		 
+## Last modification: 06 Feb 2023  		 
 ## Author: Monica Cabrera-Pasadas
 ## Email: monica.cabrera.pasadas@gmail.com
 # --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #
@@ -10,14 +10,14 @@
 ## Saved files as R Data to use in next scripts:
 ### Compartments.gr --> File with the compartment values + categories + state (contains NA/(NULL values)) + genes and ENG located in each compartment collapsed in commas
 ### Compartments_genes.gr --> File with the compartment region and its gene annotation (rows are multiplied according to the number of genes found in the compartments)
+### samples -->
 # --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #
 
 # Settings ---- 
-# wd <- "/home/monica/Desktop/MN/"
 wd <- "/home/mcabrera/Desktop/MN/"
 setwd(paste0(wd,"p53/data/HCT116/HiC/")) #path where the file is located after processing the HiC data with TADbit 
 
-samples <- c("p53_inactive","p53_active_1h","p53_active_4h","p53_active_7h","p53_active_10h", "p53_active_24h")
+samples <- c("Nut.0h","Nut.1h","Nut.4h","Nut.7h","Nut.10h", "Nut.24h") #Add here the name of the samples to analyze as they appear in the columns of the TADbit file
 
 packages <- c("readr","imputeTS")
 invisible(lapply(packages, library, character.only = TRUE))
@@ -53,7 +53,8 @@ summary(Compartments_NA20[,c(samples)]) #Visualizing that NA are removed
 # Max.   : 1.17977   Max.   : 1.24379   Max.   : 1.29946   Max.   : 1.26223   Max.   : 1.03526   Max.   : 1.1042  
 
 ## Let's categorize the Compartments values in A and B according to their sign (A compartment has positive eigenvector values and B negative)
-for (i in samples) { Compartments_NA20[[paste0("Category_",i)]] <- as.character(ifelse(Compartments_NA20[i] < 0, 'B', ifelse(Compartments_NA20[i] > 0, 'A', 'NULL'))) }
+for (i in samples) { Compartments_NA20[[paste0("Category_",i)]] <- as.character(ifelse(Compartments_NA20[i] < 0, 'B', 
+                                                                                       ifelse(Compartments_NA20[i] > 0, 'A', 'NULL'))) }
 
 Compartments_NA20$combinations <- do.call(paste, c(Compartments_NA20[,grep("Category", names(Compartments_NA20), value = TRUE)], sep="-"))
 Compartments_NA20$state_Compartments <- as.character(ifelse(Compartments_NA20$combinations == paste(replicate(length(samples), "A"), collapse = "-") , 'static in A', ifelse(Compartments_NA20$combinations == paste(replicate(length(samples), "B"), collapse = "-") , 'static in B', 'dynamic')))
@@ -72,5 +73,6 @@ nrow(Compartments_NA20[- grep("NULL", Compartments_NA20$combinations),])
 
 # --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #
 write.table(data.frame(Compartments_NA20), file="aligned_Compartments_TADbit_clean.tsv",sep = "\t", quote = F)
-save(Compartments.gr, file = "Compartments.Rdata")
+save(Compartments.gr, file = "Compartments.RData",compress = T)
+saveRDS(samples, "samples.rds")
 # --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #
