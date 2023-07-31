@@ -1,1 +1,8 @@
+# HiC (High-throughput Chromosome Conformation Capture)
 
+Provides valuable insights into how chromosomes are spatially arranged and interact with each other. In this thesis we used the **TADbit** pipeline [Serra et al. 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5540598/pdf/pcbi.1005665.pdf) with a specific version available at https://github.com/fransua/TADbit/tree/p53_javierre.
+
+## Workflow
+
+## 1. FASTQ quality control
+It assess the quality of Hi-C sequencing data examining various aspects to identify potential issues or biases that might affect downstream analysis and interpretation. 
