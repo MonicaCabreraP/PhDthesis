@@ -1,40 +1,7 @@
-# Experiments performed in this thesis
+In my doctoral thesis I investigated p53's ability to reconfigure the genome and govern transcriptional regulation by inducing alterations in the temporal and spatial genome structure. 
 
-## 3D structure
+The hypothesis of my dissertation is that p53 exerts its influence by modulating physical connections between regulatory elements as enhancers and gene promoters, via the manipulation of DNA loops.
+To assess this hypothesis, a comprehensive investigation into the potential effects of p53 activation in HCT116 cell lines achieved through pharmacologically inhibiting MDM2 with Nutlin-3a drug has been performed. This approach synergistically integrates diverse genomic datasets, encompassing Hi-C, Promoter Capture Hi-C, RNA-seq, and ChIP-seq methodologies. 
 
 :open_file_folder: [Hi-C](code/HiC/)
 
-:open_file_folder: [PCHi-C](PCHiC)
-
-
-## Epigenetics
-
-:open_file_folder: [ChIP-seq TF](Omics/ChIPseq/TF_p53/)
-
-:open_file_folder: [ChIP-seq Histone marks]
-
-:open_file_folder: [ATAC-seq]
-
-## CTCF
-
-:open_file_folder: [CTCF](#CTCF)
-
-## Transcriptome
-
-:open_file_folder: [RNA-seq]
-
-:open_file_folder: [GRO-seq]
-
-## GRO-seq
-
-# Integration
-
-:open_file_folder: [Hi-C-p53 ChIPseq](Integration_analysis/HiC-p53ChIPseq)
-
-:open_file_folder: [Hi-C-RNAseq]
-
-:open_file_folder: [Hi-C-ChIP-seq Histone marks]
-
-:open_file_folder: [Hi-C-RNAseq-p53 ChIPseq]
-
-:open_file_folder: [Hi-C-RNAseq-p53 ChIPseq-ChIP-seq Histone marks]
