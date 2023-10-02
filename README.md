@@ -6,7 +6,10 @@ To assess this hypothesis, a comprehensive investigation into the potential effe
 In this repository you will be able to find all scripts to reproduce the different analysis performed in my PhD thesis.
 
 :open_file_folder: [Hi-C](HiC/)
+
 :open_file_folder: [PCHi-C](PCHiC/)
+
 :open_file_folder: [RNA-seq](RNAseq/)
+
 :open_file_folder: [ChIP-seq](ChIPseq/)
 
