@@ -5,5 +5,5 @@ To assess this hypothesis, a comprehensive investigation into the potential effe
 
 In this repository you will be able to find all scripts to reproduce my PhD thesis.
 
-:open_file_folder: [Hi-C](code/HiC/)
+:open_file_folder: [Hi-C](HiC/)
 
