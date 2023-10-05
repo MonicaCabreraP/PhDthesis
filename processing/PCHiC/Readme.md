@@ -28,5 +28,7 @@ This procedure generates a file called ''cellType_summaryInput.Rda'' (you can fi
 5.	**Peak matrix**: Finally, CHiCAGO results from multiple experiments can be summarized in the form of a ‘peak matrix’ using makePeakMatrix.R from the chicago-Tools. The peakMatrix used in my thesis with all the PCHi-C samples can be found in the data folder.
 
 Since PCHi-C specifically targets promoter regions, the analysis can be tailored to prioritize the identification and interpretation of promoter-enhancer interactions. The results of PCHi-C processing include two types of interactions:
+
   ●	**Promoter-promoter interactions**: interactions that involve physical contacts between promoters of different genes, which can provide insights into potential regulatory relationships, co-regulation, or functional coordination between genes.
+  
   ●	**Promoter-other end interactions**: interactions between gene promoters and other genomic regions, such as enhancers, insulators, or other regulatory elements. These interactions reveal the spatial proximity and potential functional interactions between gene promoters and distal regulatory elements, playing a crucial role in gene regulation and transcriptional control.
