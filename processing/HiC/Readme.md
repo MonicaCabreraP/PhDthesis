@@ -4,7 +4,7 @@ Hi-C provides valuable insights into how chromosomes are spatially arranged and 
 
 In this thesis, to process the Hi-C data I used the [TADbit](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5540598/pdf/pcbi.1005665.pdf) pipeline with a specific version available at https://github.com/fransua/TADbit/tree/p53_javierre.
 
-In the [TADbit tutorial website](https://3dgenomes.github.io/TADbit/tutorial.html#from-fastq-files-to-interaction-matrices) you can find the commands to run the software but a general workflow to process Hi-C follows these steps:
+In the [TADbit tutorial website](https://3dgenomes.github.io/TADbit/tutorial.html#from-fastq-files-to-interaction-matrices) or in the methods section of my thesis you can find the commands to run the software; but a general workflow to process Hi-C follows these steps:
 
 1.	**Quality control** 
 2.	**Mapping** 
