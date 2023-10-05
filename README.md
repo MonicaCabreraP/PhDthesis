@@ -1,15 +1,8 @@
-In my doctoral thesis I investigated p53's ability to reconfigure the genome and govern transcriptional regulation by inducing alterations in the temporal and spatial genome structure. 
+In this repository, you'll be able to find all the scripts necessary to replicate the various analyses and figures showcased in my doctoral thesis. The repository is structured as follows:
 
-The **hypothesis of my dissertation** is that p53 exerts its influence by modulating physical connections between regulatory elements, such as enhancers and gene promoters, via the manipulation of DNA loops.
-To assess this hypothesis, a comprehensive investigation into the potential effects of p53 activation in HCT116 cell lines achieved through pharmacologically inhibiting MDM2 with Nutlin-3a drug has been performed. This approach synergistically integrates diverse genomic datasets, encompassing Hi-C, Promoter Capture Hi-C, RNA-seq, and ChIP-seq methodologies. 
+- **Processing Folder**: This section houses scripts meticulously organized by technique, serving as tools to process the raw data effectively.
 
-In this repository you will be able to find all scripts to reproduce the different analysis performed in my PhD thesis.
+- **Figures Folder**: Within this folder, you'll find scripts tailored to regenerate the statistics and figures featured in the thesis.
 
-:open_file_folder: [Hi-C](HiC/)
-
-:open_file_folder: [PCHi-C](PCHiC/)
-
-:open_file_folder: [RNA-seq](RNAseq/)
-
-:open_file_folder: [ChIP-seq](ChIPseq/)
+- **Data Folder**: If you wish to bypass the data processing step, you can access the Data Folder. It contains supplementary data tables and essential processed data, eliminating the need for additional processing, and enabling the straightforward generation of most figures presented in the manuscript.
 
