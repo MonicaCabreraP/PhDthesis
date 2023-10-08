@@ -2,3 +2,5 @@ Here you will be able to find the scripts of the figures from the the results se
 
  - A/B compartment figures are: Fig16 and Fig 17 -- Compartments.R
  - TAD figures are: Fig19 -- TADs.R
+
+For direct visualitzation of the grafics, you can also find the Rmd document in pdf of each R script.
