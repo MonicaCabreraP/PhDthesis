@@ -1,5 +1,5 @@
 # Script information ----
-## Script name: HiC_Compartments.R                 
+## Script name: Compartments.R                 
 ## Purpose: Clean the compartments file obtained from TADbit and prepare it for visualization 
 ## Last modification: 06 Feb 2023  		 
 ## Author: Monica Cabrera-Pasadas
@@ -77,6 +77,8 @@ nrow(data.frame(Compartments.gr)[- grep("NULL", Compartments.gr$all_compartments
 
 Compartments.df <- data.frame(Compartments.gr)
 
+# EXTRA CODE NOT USED FOR THESIS:
+##################################################################################
 # Calculate the number of compartments that correspond to 5% of the total
 # n <- nrow(Compartments.df)
 # n_top <- ceiling(n * 0.05)
@@ -86,13 +88,13 @@ Compartments.df <- data.frame(Compartments.gr)
 # df_top <- list()
 # df_bottom <- list()
 # Compartments_strong <- list()
-
-for (sample in samples[-1]) 
-  {
-  Compartments.df[[paste0(sample,"_Nut.0h_diff")]] <- Compartments.df[[sample]] - Compartments.df$Nut.0h
-
-    for (threshold in c("0.1","0.15","0.2"))
-    {
+# 
+# for (sample in samples[-1]) 
+#   {
+#   Compartments.df[[paste0(sample,"_Nut.0h_diff")]] <- Compartments.df[[sample]] - Compartments.df$Nut.0h
+# 
+#     for (threshold in c("0.1","0.15","0.2"))
+#     {
   # # Select the top 5% of rows by distribution
   # df_top[[sample]] <- head(Compartments.df[order(-Compartments.df[[paste0(sample,"_Nut.0h_diff")]]), ], n_top)
   #   
@@ -110,12 +112,13 @@ for (sample in samples[-1])
   # Compartments.df[[paste0(sample,"_Nut.0h_strenght_compartment")]] <- Compartments.df[[paste0(sample,"_Nut.0h_strenght_compartment")]] %>% replace_na('none')
   #   
   # Compartments.df[[paste0(sample,"_Nut.0h_strenght_compartment_",threshold)]] <- as.character(ifelse(Compartments.df[[paste0(sample,"_Nut.0h_diff")]] > threshold, paste0('Strong activation ',sample),
-                                                                                   # ifelse(Compartments.df[[paste0(sample,"_Nut.0h_diff")]] < -(threshold), paste0('Strong inactivation ',sample),"None")))
-  Compartments.df[[paste0(sample,"_Nut.0h_strenght_compartment_",threshold)]] <- as.character(ifelse(Compartments.df[[paste0(sample,"_Nut.0h_diff")]] > threshold, paste0('Strong activation ',sample),
-                                                                                                     ifelse(Compartments.df[[paste0(sample,"_Nut.0h_diff")]] < paste0("-",threshold), paste0('Strong inactivation ',sample),"None")))
-  
-}
-}
+#                                                                                    # ifelse(Compartments.df[[paste0(sample,"_Nut.0h_diff")]] < -(threshold), paste0('Strong inactivation ',sample),"None")))
+#   Compartments.df[[paste0(sample,"_Nut.0h_strenght_compartment_",threshold)]] <- as.character(ifelse(Compartments.df[[paste0(sample,"_Nut.0h_diff")]] > threshold, paste0('Strong activation ',sample),
+#                                                                                                      ifelse(Compartments.df[[paste0(sample,"_Nut.0h_diff")]] < paste0("-",threshold), paste0('Strong inactivation ',sample),"None")))
+#   
+# }
+# }
+################################################################################################################################################################################################################################################################
 Compartments.gr <- makeGRangesFromDataFrame(Compartments.df, keep.extra.columns = T)
 
 # --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #
