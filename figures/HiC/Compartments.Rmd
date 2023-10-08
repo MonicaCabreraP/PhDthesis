@@ -29,6 +29,27 @@ color_heatmap_compartments <- colorRamp2(breaks = c(-0.5,0,0.5), colors = c("#23
 load(paste0(results,"HiC/Compartments.RData"))
 ```
 
+#Fig 16A: Principal Component Analysis of the compartment scores 
+
+```{r Fig16A}
+pca_res <- prcomp(t(data.frame(Compartments.gr)[,c(samples)]), scale. = T)
+autoplot(pca_res,label = TRUE)
+```
+
+# Fig 16B: Hierarchical clustering analysis (Ward criterion) of compartment values throughout p53 activation 
+
+```{r Fig16B}
+# Perform hierarchical cluster analysis.
+dend <- t(data.frame(Compartments.gr)[!grepl("NULL",Compartments.gr$all_compartments_combinations) & grepl("dynamic", Compartments.gr$all_compartments_state),][,c(samples)]) %>%  
+        dist(method = "euclidean") %>% hclust(method="ward.D2") %>% sort %>% as.dendrogram()
+
+dend %>%
+  set("branches_k_color", value = c("#23447f","#881010"),k=2) %>%
+  set("labels_col", value = c("#fde725ff","#43377fff","#440154ff","#37b578ff","#21908dff","#31668dff"), k = 6) %>%
+  plot(horiz=FALSE, axes=TRUE, main="Hierarchical cluster of all the compartment with values in all samples")
+
+```
+
 # Fig 16C: Percentage of 100kb genomic regions defined as A or B compartments for each time point. 
 
 ```{r Fig 16C}
@@ -197,7 +218,7 @@ ggplot(region,aes(start,value))+
 
 ```
 
-# Extra figures not added in the thesis
+# Extra figures not added to the thesis
 
 <!-- ```{r Percentage of compartment combination switch} -->
 <!-- dynamic_compartments_Freq$Percentage <- round(dynamic_compartments_Freq$Freq/nrow(data.frame(Compartments.gr)[(! grepl("NULL", Compartments.gr$all_compartments_combinations)) & Compartments.gr$all_compartments_state == "dynamic",])*100, digits = 2) -->
