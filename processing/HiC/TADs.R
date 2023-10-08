@@ -67,6 +67,6 @@ nrow(TADs_TADbitScore_NA20)
 # 4.777 TADs
 
 TADs.gr <- makeGRangesFromDataFrame(TADs_TADbitScore_NA20, seqnames.field = "Chromosome", start.field = "TADborder", end.field = "TADborder", keep.extra.columns = T)
-write.table(TADs_TADbitScore_NA20, file="clean_aligned_TADborders_TADbit",sep = "\t", quote = F)
+write.table(TADs_TADbitScore_NA20, file="aligned_TADborders_TADbit_clean",sep = "\t", quote = F)
 save.image(file='TADs.RData')
 # --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #
