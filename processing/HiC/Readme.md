@@ -3,13 +3,6 @@
 Hi-C provides valuable insights into how chromosomes are spatially arranged and interact with each other. 
 
 In this thesis, to process the Hi-C data I used the [TADbit](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5540598/pdf/pcbi.1005665.pdf) pipeline with a specific version available at https://github.com/fransua/TADbit/tree/p53_javierre.
-Use Control + Shift + m to toggle the tab key moving focus. Alternatively, use esc then tab to move to the next interactive element on the page.
-No file chosen
-Attach files by dragging & dropping, selecting or pasting them.
-Editing PhDthesis/processing/HiC/Readme.md at main · MonicaCabreraP/PhDthesis
-Select Something
-While the code is focused, press Alt+F1 for a menu of operations.
-
 
 In the [TADbit tutorial website](https://3dgenomes.github.io/TADbit/tutorial.html#from-fastq-files-to-interaction-matrices) or in the methods section of my thesis you can find the commands to run the software, but a general workflow to process Hi-C follows these steps:
 
