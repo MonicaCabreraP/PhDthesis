@@ -135,4 +135,4 @@ down <- rownames(res)[which(res$log2FoldChange < -2 & res$padj < 0.05)]
 
 ```
 
-To create RNA-seq figures check: [PhDthesis/figures/RNAseq](/figures/RNAseq)
+To create the RNA-seq figures check: [PhDthesis/figures/RNAseq](/figures/RNAseq)
