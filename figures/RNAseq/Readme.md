@@ -1,6 +1,10 @@
-Explanation script
+# Data Analysis and Interpretation
 
-# PCA Plot
+Principal Component Analysis (PCA) was performed to visualize sample clustering and assess reproducibility between biological replicates. Volcano Plots were performed to display log2 fold changes vs. adjusted p-values to highlight significantly up- and down-regulated genes.
+
+Explanation of the R script: 
+
+## PCA Plot
 
 - **rlog Transformation**: Regularized log transformation is performed on the count data to stabilize the variance across the mean, which is useful for PCA.
 
@@ -8,7 +12,7 @@ Explanation script
 
 - **Plotting**: ggplot2 is used to create the PCA plot, where the percentage variance explained by each principal component is displayed on the axes.
 
-# Volcano Plot:
+## Volcano Plot:
 
 - **Data Preparation**: A data frame is created with log2 fold change and -log10 adjusted p-values.
 
