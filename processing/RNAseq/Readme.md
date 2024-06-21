@@ -51,7 +51,7 @@ STAR --runThreadN 20 --runMode genomeGenerate \
      --sjdbGTFtagExonParentGene gene_id
 ```
 
-###Running STAR Alignment
+### Running STAR Alignment
 Align trimmed reads to the indexed reference genome using STAR, following ENCODE-recommended parameters and converts SAM to BAM format using samtools.
 
 ```bash
