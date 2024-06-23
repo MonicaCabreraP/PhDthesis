@@ -14,7 +14,7 @@ Explanation of the R script:
 
 ## Volcano Plot:
 
-- **Data Preparation**: A data frame is created with log2 fold change and -log10 adjusted p-values.
+- **Data**: [/data/RNAseq/DEA_Nutlin1h_vs_DMSO.txt](data/RNAseq/DEA_Nutlin1h_vs_DMSO.txt) and [/data/RNAseq/DEA_Nutlin10h_vs_DMSO.txt](data/RNAseq/DEA_Nutlin10h_vs_DMSO.txt)
 
 - **Labeling**: Genes are labeled as "Upregulated", "Downregulated", or "Not significant" based on their log2 fold change and adjusted p-value.
 
